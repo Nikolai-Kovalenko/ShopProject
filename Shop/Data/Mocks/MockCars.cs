@@ -50,11 +50,33 @@ namespace Shop.Data.Mocks
                         name = "BMW",
                         shortDesc = "Чёрый как ночь",
                         longDesc = "Отличный автомобиль, почти такой же классный как Mercedes, только чёрный",
-                        img = "/img/bmwBlack.jpg",
+                        img = "/img/bmwFullBlack.jpg",
                         price = 50000,
                         isFavourite = true,
                         available = true,
                         category = _categoryCars.AllCategoris.Last()
+                    },
+
+                    new Car {
+                        name = "Mercedes-Benz Smart",
+                        shortDesc = "Уютный маленький пробник",
+                        longDesc = "Можно поднять в руках к себе домой, чтобы не платить за стоянку",
+                        img = "/img/mercedesSmartCar.jpg",
+                        price = 12500,
+                        isFavourite = true,
+                        available = true,
+                        category = _categoryCars.AllCategoris.Last()
+                    },
+
+                    new Car {
+                        name = "Future Cars",
+                        shortDesc = "Машина будущего",
+                        longDesc = "Здесь могла бы быть машина, которая может летать, но эта тоже ничего",
+                        img = "/img/futureCars.jpg",
+                        price = 999999,
+                        isFavourite = true,
+                        available = true,
+                        category = _categoryCars.AllCategoris.Skip(1).First()
                     }
                 };
             }

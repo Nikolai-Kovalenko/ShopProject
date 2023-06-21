@@ -7,7 +7,7 @@
         public string shortDesc { get; set; }
         public string longDesc { get; set; }
         public string img { get; set; }
-        public ushort price { get; set; }
+        public int price { get; set; }
         public bool isFavourite { get; set; }
         public bool available { get; set; }
         public int categoryId { get; set; }
