@@ -13,6 +13,7 @@ using Shop.Data;
 using Shop.Data.Interfaces;
 using Shop.Data.Mocks;
 using Shop.Data.Reository;
+using Shop.Data.Models;
 
 namespace Shop
 {
@@ -30,11 +31,14 @@ namespace Shop
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAllCars, CarRepository>(); 
             services.AddTransient<ICarsCategory, CategotyRepository>();
-            services.AddMvc();
             services.AddControllersWithViews();
+            
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShopCart.GetCatr(sp));
 
-           
-            //services.MvcOptions.EnableEndpointRouting = false;
+            services.AddMvc();
+            services.AddMemoryCache();
+            services.AddSession();
 
         }
 
@@ -44,15 +48,15 @@ namespace Shop
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseRouting();
 
-            //  од ниже вз€л с GPT €кобы дл€ того, чтобы настроить маршрутизацию дл€ контроллера
+            //  од ниже вз€л с GPT дл€ того, чтобы настроить маршрутизацию дл€ контроллера
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "cars",
-                    pattern: "Cars/List",
-                    defaults: new { controller = "Cars", action = "List" }
+            endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
             });
 
