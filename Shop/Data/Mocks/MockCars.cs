@@ -41,7 +41,7 @@ namespace Shop.Data.Mocks
                         longDesc = "Стильный внешний вид и шикарный солон",
                         img = "/img/mercedesSClass.jpg",
                         price = 55000,
-                        isFavourite = true,
+                        isFavourite = false,
                         available = true,
                         category = _categoryCars.AllCategoris.Last()
                     },
@@ -52,7 +52,7 @@ namespace Shop.Data.Mocks
                         longDesc = "Отличный автомобиль, почти такой же классный как Mercedes, только чёрный",
                         img = "/img/bmwFullBlack.jpg",
                         price = 50000,
-                        isFavourite = true,
+                        isFavourite = false,
                         available = true,
                         category = _categoryCars.AllCategoris.Last()
                     },

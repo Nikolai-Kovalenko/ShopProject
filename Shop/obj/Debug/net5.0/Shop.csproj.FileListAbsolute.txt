@@ -84,3 +84,4 @@ F:\C#\Shop\Shop\bin\Debug\net5.0\Humanizer.dll
 F:\C#\Shop\Shop\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 F:\C#\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\AllCars.cshtml.g.cs
 F:\C#\Shop\Shop\obj\Debug\net5.0\Razor\Views\ShopCart\Index.cshtml.g.cs
+F:\C#\Shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
