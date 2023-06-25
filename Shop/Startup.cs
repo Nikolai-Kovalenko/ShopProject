@@ -14,6 +14,7 @@ using Shop.Data.Interfaces;
 using Shop.Data.Mocks;
 using Shop.Data.Reository;
 using Shop.Data.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Shop
 {
@@ -39,7 +40,6 @@ namespace Shop
             services.AddMvc();
             services.AddMemoryCache();
             services.AddSession();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,21 +52,27 @@ namespace Shop
             app.UseRouting();
 
             // Код ниже взял с GPT для того, чтобы настроить маршрутизацию для контроллера
+
             app.UseEndpoints(endpoints =>
             {
             endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
+
+                endpoints.MapControllerRoute(
+                    name: "categoryFilter",
+                    pattern: "Car/{action}/{category?}",
+                    defaults: new { controller = "Car", action = "List" }
+                );
+
             });
 
-            using (var scope = app.ApplicationServices.CreateScope())
+        using (var scope = app.ApplicationServices.CreateScope())
             {
                 AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
                 DBObjects.Initial(content);
-            }
-
-            
+            }            
         }
     }
 }
