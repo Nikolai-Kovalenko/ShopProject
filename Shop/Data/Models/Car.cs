@@ -3,7 +3,7 @@
     public class Car
     {
         public int id { get; set; }
-        public string name { get; set;}
+        public string name { get; set; }
         public string shortDesc { get; set; }
         public string longDesc { get; set; }
         public string img { get; set; }
@@ -14,5 +14,4 @@
         public virtual Category category { get; set; }
 
     }
-
 }

@@ -1,12 +1,15 @@
-﻿namespace Shop.Data.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Shop.Data.Models
 {
     public class ShopCartItem
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public Car car { get; set; }
         public int price { get; set; }
-
         public string ShopCartId { get; set; }
 
     }
 }
+    

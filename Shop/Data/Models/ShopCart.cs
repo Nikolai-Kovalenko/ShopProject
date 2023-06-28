@@ -26,11 +26,11 @@ namespace Shop.Data.Models
         {
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
             var context = services.GetService<AppDBContent>();
-            string shopartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
+            string shopCartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
 
-            session.SetString("CartId", shopartId);
+            session.SetString("CartId", shopCartId);
 
-            return new ShopCart(context) { ShopCartId = shopartId };
+            return new ShopCart(context) { ShopCartId = shopCartId };
         }
 
         public void AddToCart(Car car)

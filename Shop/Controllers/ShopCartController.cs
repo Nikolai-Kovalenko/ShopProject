@@ -31,15 +31,15 @@ namespace Shop.Controllers
             return View(obj);
         }
 
-        public RedirectToActionResult addToCart(int id) 
+        public RedirectToActionResult addToCart(int id)     
         {
             var item = _carRep.Cars.FirstOrDefault(i => i.id == id);
             if(item != null)
             {
                 _shopCart.AddToCart(item);
-            }
+            } 
 
             return RedirectToAction("Index");
         }
     }
-}
+}   

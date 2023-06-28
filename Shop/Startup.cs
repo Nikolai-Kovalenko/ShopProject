@@ -1,4 +1,5 @@
 using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,6 +33,7 @@ namespace Shop
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAllCars, CarRepository>(); 
             services.AddTransient<ICarsCategory, CategotyRepository>();
+            services.AddTransient<IAllOrders, OrdersRepository>();
             services.AddControllersWithViews();
             
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
