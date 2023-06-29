@@ -32,20 +32,20 @@ namespace Shop.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     orderId = table.Column<int>(type: "int", nullable: false),
-                    carId = table.Column<int>(type: "int", nullable: false),
+                    CarId = table.Column<int>(type: "int", nullable: false),
                     price = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OrderDetail", x => x.id);
                     table.ForeignKey(
-                        name: "FK_OrderDetail_Car_carId",
-                        column: x => x.carId,
+                        name: "FK_OrderDetail_Car_CarId",
+                        column: x => x.CarId,
                         principalTable: "Car",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderDetail_Order_orderId",
+                        name: "FK_OrderDetail_Order_id",
                         column: x => x.orderId,
                         principalTable: "Order",
                         principalColumn: "id",
@@ -58,7 +58,7 @@ namespace Shop.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    carid = table.Column<int>(type: "int", nullable: true),
+                    CarId = table.Column<int>(type: "int", nullable: true),
                     price = table.Column<int>(type: "int", nullable: false),
                     ShopCartId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -66,17 +66,17 @@ namespace Shop.Migrations
                 {
                     table.PrimaryKey("PK_ShopCartItem", x => x.id);
                     table.ForeignKey(
-                        name: "FK_ShopCartItem_Car_carid",
-                        column: x => x.carid,
+                        name: "FK_ShopCartItem_Car_CarId",
+                        column: x => x.CarId,
                         principalTable: "Car",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetail_carId",
+                name: "IX_OrderDetail_CarId",
                 table: "OrderDetail",
-                column: "carId");
+                column: "CarId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderDetail_orderId",
@@ -84,9 +84,9 @@ namespace Shop.Migrations
                 column: "orderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShopCartItem_carid",
+                name: "IX_ShopCartItem_CarId",
                 table: "ShopCartItem",
-                column: "carid");
+                column: "CarId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

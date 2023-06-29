@@ -4,40 +4,40 @@
     <h3>Оформление заказа</h3>
     <form asp-action="CheckoutForm" method="post" class="form-horizontal">
         <div class="form-group">
-            <lable asp-for="name"></lable>
+            <label asp-for="name"></label>
             <div class="col-md-5">
-                <input asp-for="name" class="form-control"/>
-                <span asp-validation-for="name" class="text-denger"></span>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <lable asp-for="surName"></lable>
+            <label asp-for="surName"></label>
             <div class="col-md-5">
                 <input asp-for="surName" class="form-control" />
-                <span asp-validation-for="surName" class="text-denger"></span>
+                <span asp-validation-for="surName" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <lable asp-for="adress"></lable>
+            <label asp-for="adress"></label>
             <div class="col-md-5">
                 <input asp-for="adress" class="form-control" />
-                <span asp-validation-for="adress" class="text-denger"></span>
+                <span asp-validation-for="adress" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <lable asp-for="phone"></lable>
+            <label asp-for="phone"></label>
             <div class="col-md-5">
                 <input asp-for="phone" class="form-control" />
-                <span asp-validation-for="phone" class="text-denger"></span>
+                <span asp-validation-for="phone" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <lable asp-for="email"></lable>
+            <label asp-for="email"></label>
             <div class="col-md-5">
                 <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-denger"></span>
+                <span asp-validation-for="email" class="text-danger"></span>
             </div>
         </div>
-        <input class="btn btn-success" type="submit" value="Завершить заказ"/>
+        <input class="btn btn-success" type="submit" value="Завершить заказ" />
     </form>
 </div>

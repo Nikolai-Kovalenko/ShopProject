@@ -21,13 +21,16 @@ namespace Shop.Data.Reository
             order.createOrderTime = DateTime.Now;
             appDBContent.Order.Add(order);
 
+            appDBContent.SaveChanges();
+
+
             var items = shopCart.listShopItems;
 
             foreach (var item in items)
             {
                 var orderDetail = new OrderDetail()
                 {
-                    carId = item.car.id,
+                    CarId = item.car.id,
                     orderId = order.id,
                     price = (uint)item.car.price
                 };
